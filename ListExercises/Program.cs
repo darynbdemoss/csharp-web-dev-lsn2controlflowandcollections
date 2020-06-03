@@ -29,7 +29,12 @@ namespace ListExercises
             letters.Add("dyn");
             letters.Add("daasdryn");
 
-            //Console.WriteLine(letterCounter(letters));
+            letterCounter(letters);
+
+            Console.WriteLine("\nEnter a word length: ");
+            int length = Int32.Parse(Console.ReadLine());
+
+            wordLength(letters, length);
 
         }
         static int evenSum(List<int> numbers)
@@ -45,11 +50,24 @@ namespace ListExercises
 
             return even;
         }
-        static void letterCounter(List<string> word)
+        static void letterCounter(List<string> words)
         {
+            foreach (string word in words)
+                if (word.Length == 5)
+            {
+                    Console.WriteLine(word);
+            }
 
 
+        }
 
+        static void wordLength(List<string>words, int userLength)
+        {
+            foreach (string word in words)
+                if (word.Length == userLength)
+                {
+                    Console.WriteLine(word);
+                }
         }
 
     }
